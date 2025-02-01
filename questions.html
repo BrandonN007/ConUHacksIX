@@ -2,249 +2,320 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<div>
-  <ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
-  </ul>
-  </nav>
-</div>
+  <div class="container">
+    <div class="question" id="q1">
+      <h2>What are your main financial goals?</h2>
+      <label for="financial_goal">Choose your financial goal:</label>
+      <select name="financial_goal" id="financial_goal">
+        <option value="buying_home">Buying Home</option>
+        <option value="pay_educ">Paying Education</option>
+        <option value="grow_health">Growing Wealth</option>
+        <option value="reduce_debt">Reducing Debt</option>
+        <option value="retire_plan">Retirement Planning</option>
+        <option value="start_bus">Starting a Business</option>
+        <option value="improve_cred_sc">Improve Credit Score</option>
+        <option value="healthcare_emergency_saving">Healthcare & Emergency Savings</option>
+      </select>
+      <br><br>
+      <button onclick="nextQuestion(1)">⇨</button>
+    </div>
 
-<div>
-  <h1>Questions</h1>
-  <!--Section 1-->
-  <h2>What is your age?</h2>
-  <input type="text" class="form-control"  id="age" name="Age"><br><br> <!--add limit of age-->
-  <button type="button" class="btn btn-primary" type="button" class="btn btn-primary">next</button>
-  
-  <h2>What is your monthly income after taxes</h2>
-  <input type="text" class="form-control"  id="month_af_tax" name="Month_af_tax"><br><br>
-  <button type="button" class="btn btn-primary">next</button>
+    <div class="question" id="q2">
+      <h2>What is your risk tolerance?</h2>
+        <input type="radio" id="risk_low" name="risk" value="Low">
+        <label for="risk_low">Low</label>
+        <input type="radio" id="risk_medium" name="risk" value="Medium">
+        <label for="risk_medium">Medium</label>
+        <input type="radio" id="risk_high" name="risk" value="High">
+        <label for="risk_high">High</label>
+        <br><br>
+        <button onclick="prevQuestion(2)" id="prev2" style="display: none;">⇦</button><button onclick="nextQuestion(2)">⇨</button>
+    </div>
 
-  <h2>What are your fixed monthly expenses?</h2>
-  <h3>(Housing, utilities, insurance, transportation, etc.)</h3>
-  <input type="text" class="form-control"  id="month_exp" name="Month_exp"><br><br>
-  <button type="button" class="btn btn-primary">next</button>
-  
-  <h2>How much do you save or invest each month?</h2>
-  <h3>(Percentage or fixed amount)</h3>
-  <input type="text" class="form-control"  id="month_invest" name="Month_invest"><br><br>
-  <button type="button" class="btn btn-primary">next</button>
+    <div class="question" id="q3">
+      <h2>When do you plan to achieve your goal?</h2>
+      <input type="radio" id="short_term" name="when_plan" value="Short">
+      <label for="short_term">Short-term (less than 1 year)</label>
+      <input type="radio" id="mid_term" name="when_plan" value="Mid">
+      <label for="mid_term">Mid-term (1-5 Years)</label>
+      <input type="radio" id="high_term" name="when_plan" value="High">
+      <label for="high_term">Long-Term (5+ years)</label>
+      <br><br>
+      <button onclick="prevQuestion(3)" id="prev3" style="display: none;">⇦</button><button onclick="nextQuestion(3)">⇨</button>
+    </div>
 
-  <h2>Do you have any outstanding debt?</h2>
-  <input type="radio" id="debt_yes" name="debt" value="Yes">
-  <label for="yes">Yes</label> 
-    <!--If yes, what type of debt do you have? (Loans, credit cards, mortgages, etc.)
-    What is the total amount of your outstanding debt?
-    What is your monthly debt payment?-->
-  <input type="radio" id="debt_no" name="debt" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+    <div class="question" id="q4">
+      <h2>How much do you have in your emergency fund?</h2>
+      <input type="text" id="emergency_fund" name="emergency_fund"><br><br>
+      <br><br>
+      <button onclick="prevQuestion(4)" id="prev4" style="display: none;">⇦</button><button onclick="nextQuestion(4)">⇨</button>
+    </div>
 
-</div>
-<div>
-  <!--Section 2-->
-  <h2>What are your main financial goals?</h2>
-  <label for="financial_goal">Choose your financial goal:</label>
-  <br>
-  <select name="financial_goal" id="financial_goal">
-    <option value="buying_home">Buying Home</option>
-    <option value="pay_educ">Paying Education</option>
-    <option value="grow_health">Growing Wealth</option>
-    <option value="reduce_debt">Reducing Debt</option>
-    <option value="retire_plan">Retirement Planning</option>
-    <option value="start_bus">Starting a Business</option>
-    <option value="improve_cred_sc">Improve Credit Score</option>
-    <option value="healthcare&emergency_saving">Healthcare & Emergency Savings</option>
-    <!--maybe change it to just a normal textbox-->
-  </select>
-  <button type="button" class="btn btn-primary">next</button>
-</div>
-<div>
-  <h2>What is your risk tolerance</h2>
-  <input type="radio" id="risk_low" name="risk" value="Low">
-  <label for="low">Low</label> 
-  <input type="radio" id="risk_medium" name="risk" value="Medium">
-  <label for="medium">Medium</label> 
-  <input type="radio" id="risk_high" name="risk" value="High">
-  <label for="high">High</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+    <div class="question" id="q5">
+      <h2>Do you currently invest?</h2>
+      <input type="radio" id="invest_yes" name="invest" value="Yes">
+      <label for="invest_yes">Yes</label>
+      <input type="radio" id="invest_no" name="invest" value="No">
+      <label for="invest_no">No</label>
+      <br><br>
+      <button onclick="prevQuestion(5)" id="prev5" style="display: none;">⇦</button><button onclick="nextQuestion(5)">⇨</button>
+    </div>
 
-  <h2>When do you plan to achieve</h2>
-  <input type="radio" id="short_term" name="when_plan" value="Short">
-  <label for="short">Short-term less than 1 year</label> 
-  <br>
-  <input type="radio" id="mid_term" name="when_plan" value="Mid">
-  <label for="mid">Mid-term 1-5 Years</label> 
-  <br>
-  <input type="radio" id="high_term" name="when_plan" value="High">
-  <label for="high">Long-Term 5+ years</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+    <div class="question" id="q6">
+      <h2>What types of investments do you have?</h2>
+      <input type="checkbox" name="invest_type" value="Stocks"> Stocks<br>
+      <input type="checkbox" name="invest_type" value="Bonds"> Bonds<br>
+      <input type="checkbox" name="invest_type" value="Crypto"> Crypto<br>
+      <input type="checkbox" name="invest_type" value="Real_Estate"> Real Estate<br>
+      <input type="checkbox" name="invest_type" value="Mutual_Funds"> Mutual Funds<br>
+      <input type="checkbox" name="invest_type" value="ETF"> ETFs<br>
+      <input type="checkbox" name="invest_type" value="Nothing"> Nothing<br>
+      <br><br>
+      <button onclick="prevQuestion(6)" id="prev6" style="display: none;">⇦</button><button onclick="nextQuestion(6)">⇨</button>
+    </div>
+          
+    <div class="question" id="q7">
+      <h2>How frequently do you invest?</h2>
+      <select name="freq_invest" id="freq_invest">
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+        <option value="occasionnaly">Occasionnaly</option>
+        <option value="rarely">Rarely</option>
+        <option value="rarely">Never</option>
+      </select>
+      <br><br>
+      <button onclick="prevQuestion(7)" id="prev7" style="display: none;">⇦</button><button onclick="nextQuestion(7)">⇨</button>
+    </div>
 
-  <h2>Do you have an emergency fund?</h2>
-  <input type="radio" id="fund_yes" name="emergency_fund" value="Yes">
-  <label for="yes">Yes</label> 
-  <input type="radio" id="css" name="emergency_fund" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
-  <!--If yes, how many months of expenses can it cover?-->
-</div>
+    <div class="question" id="q8">
+      <h2>What type of financial products interest you the most?</h2>
+      <input type="checkbox" id="interest_finance1" name="interest_finance1" value="Stocks">
+      <label for="interest_finance1">Stocks</label><br>
+      <input type="checkbox" id="interest_finance2" name="interest_finance2" value="Bonds">
+      <label for="interest_finance2">Bonds</label><br>
+      <input type="checkbox" id="interest_finance3" name="interest_finance3" value="Crypto">
+      <label for="interest_finance3">Crypto</label><br>
+      <input type="checkbox" id="interest_finance4" name="interest_finance4" value="Real_Estate">
+      <label for="interest_finance4">Real Estate</label><br>
+      <input type="checkbox" id="interest_finance5" name="interest_finance5" value="Mutual_Funds">
+      <label for="interest_finance5">Mutual Funds</label><br>
+      <input type="checkbox" id="interest_finance6" name="interest_finance6" value="ETF">
+      <label for="interest_finance6">ETFs</label><br>
+      <input type="checkbox" id="interest_finance7" name="interest_finance7" value="Nothing">
+      <label for="interest_finance7">Nothing</label><br>
+      <br><br>
+      <button onclick="prevQuestion(8)" id="prev8" style="display: none;">⇦</button><button onclick="nextQuestion(8)">⇨</button>
+    </div>
+          
+    <div class="question" id="q9">
+      <h2>Do you track your spending?</h2>
+      <input type="radio" id="track_yes" name="track_spend" value="Yes">
+      <label for="yes">Yes</label> 
+      <input type="radio" id="track_no" name="track_spend" value="No">
+      <label for="no">No</label><br>
+      <br><br>
+      <button onclick="prevQuestion(9)" id="prev9" style="display: none;">⇦</button><button onclick="nextQuestion(9)">⇨</button>
+    </div>
+          
+    <div class="question" id="q10">
+      <h2>How do you currently budget?</h2>
+      <input type="checkbox" id="interest_finance1" name="interest_finance1" value="Stocks">
+      <label for="interest_finance1">Manually</label><br>
+      <input type="checkbox" id="interest_finance2" name="interest_finance2" value="Bonds">
+      <label for="interest_finance2">Apps</label><br>
+      <input type="checkbox" id="interest_finance3" name="interest_finance3" value="Crypto">
+      <label for="interest_finance3">No Budgeting</label><br>
+      <br><br>
+      <button onclick="prevQuestion(10)" id="prev10" style="display: none;">⇦</button><button onclick="nextQuestion(10)">⇨</button>
+    </div>
+        
+    <div class="question" id="q11">
+      <h2>What are your biggest spendings?</h2>
+      <input type="text" id="biggest_spend" name="Biggest_spend"><br><br>
+      <button onclick="prevQuestion(11)" id="prev11" style="display: none;">⇦</button><button onclick="nextQuestion(11)">⇨</button>
+    </div>
+          
+    <div class="question" id="q12">
+      <h2>How do you manage your bills and subscriptions?</h2>
+      <input type="radio" id="manage_auto" name="manage_sub" value="Automatic">
+      <label for="automatic">Automatic</label> 
+      <input type="radio" id="manage_manual" name="manage_sub" value="Manual">
+      <label for="manual">Manual</label><br>
+      <br><br>
+      <button onclick="prevQuestion(12)" id="prev12" style="display: none;">⇦</button><button onclick="nextQuestion(12)">⇨</button>
+    </div>
+          
+    <div class="question" id="q13">
+      <h2>Have you ever faced financial stress due to overspending?</h2>
+      <input type="radio" id="stress_yes" name="finance_stress" value="Yes">
+      <label for="yes">Yes</label> 
+      <input type="radio" id="stress_no" name="finance_stress" value="No">
+      <label for="no">No</label><br>
+      <br><br>
+      <button onclick="prevQuestion(13)" id="prev13" style="display: none;">⇦</button><button onclick="nextQuestion(13)">⇨</button>
+    </div>
+          
+    <div class="question" id="q15">
+      <h2>What is your current credit score?</h2>
+      <input type="radio" id="cred_under_600" name="cred_score" value="und600">
+      <label for="Und600">Under 600</label> 
+      <input type="radio" id="cred_between_600-700" name="cred_score" value="b600-700">
+      <label for="B600-700">Between 600-700</label><br>
+      <input type="radio" id="cred_between_700-800" name="cred_score" value="b700-800">
+      <label for="B700-800">Between 700-800</label> 
+      <input type="radio" id="cred_over_800" name="cred_score" value="over800">
+      <label for="Over800">Over 800</label><br>
+      <br><br>
+      <button onclick="prevQuestion(14)" id="prev14" style="display: none;">⇦</button><button onclick="nextQuestion(15)">⇨</button>
+    </div>
+        
+    <div class="question" id="q16">
+      <h2>Have you ever missed a credit payment</h2>
+      <input type="radio" id="miss_pay_yes" name="miss_pay" value="Yes">
+      <label for="yes">Yes</label> 
+      <input type="radio" id="miss_pay_no" name="miss_pay" value="No">
+      <label for="no">No</label><br>
+      <br><br>
+      <button onclick="prevQuestion(15)" id="prev15" style="display: none;">⇦</button><button onclick="nextQuestion(16)">⇨</button>
+    </div>
+          
+    <div class="question" id="q17">
+      <h2>Are you looking for a better loan/credit card offer</h2>
+      <input type="radio" id="look_cred_yes" name="look_cred" value="Yes">
+      <label for="yes">Yes</label> 
+      <input type="radio" id="look_cred_no" name="look_cred" value="No">
+      <label for="no">No</label><br>
+      <br><br>
+      <button onclick="prevQuestion(17)" id="prev17" style="display: none;">⇦</button><button onclick="nextQuestion(17)">⇨</button>
+    </div>
+        
+    <div class="question" id="q18">
+      <h2>Do you have retirement savings plan</h2>
+      <input type="radio" id="look_cred_yes" name="look_cred" value="Yes">
+      <label for="yes">Yes</label> 
+      <input type="radio" id="look_cred_no" name="look_cred" value="No">
+      <label for="no">No</label><br>
+      <br><br>
+      <button onclick="prevQuestion(18)" id="prev18" style="display: none;">⇦</button><button onclick="nextQuestion(18)">⇨</button>
+    </div>
+          
+    <div class="question" id="q19">
+      <h2>At what age do you plan to retire?</h2>
+      <input type="text" id="retire_age" name="Retire_age"><br><br> <!--add limit of age-->
+      <br><br>
+      <button onclick="prevQuestion(19)" id="prev19" style="display: none;">⇦</button><button onclick="nextQuestion(19)">⇨</button>
+    </div>
+          
+    <div class="question" id="q20">
+      <h2>What is your ideal retirement lifestyle</h2>
+      <input type="radio" id="basic_lifestyle" name="lifestyle" value="Basic">
+      <label for="basic">Basic</label> 
+      <input type="radio" id="comf_lifestyle" name="lifestyle" value="Comfortable">
+      <label for="comfortable">Comfortable</label><br>
+      <input type="radio" id="lux" name="lifestyle" value="Luxury">
+      <label for="luxury">Luxury</label><br>
+      <br><br>
+      <button onclick="prevQuestion(20)" id="prev20" style="display: none;">←</button><button onclick="nextQuestion(20)">⇨</button>
+    </div>
+  </div>
 
-<!--Section 3-->
-<div>
-  <h2>Do you currently invest?</h2>
-  <input type="radio" id="invest_yes" name="invest" value="Yes">
-  <label for="yes">Yes</label> 
-  <input type="radio" id="invest_no" name="invest" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+  <script>
+    function nextQuestion(current) {
+      const currentQuestion = document.getElementById(`q${current}`);
+      const nextQuestion = document.getElementById(`q${current + 1}`);
 
-  <h2>What types of investments do you have?</h2>
-  <input type="checkbox" id="invest_type1" name="invest_type1" value="Stocks">
-  <label for="invest_type1">Stocks</label><br>
-  <input type="checkbox" id="invest_type2" name="invest_type2" value="Bonds">
-  <label for="invest_type2">Bonds</label><br>
-  <input type="checkbox" id="invest_type3" name="invest_type3" value="Crypto">
-  <label for="invest_type3">Crypto</label><br>
-  <input type="checkbox" id="invest_type4" name="invest_type4" value="Real_Estate">
-  <label for="invest_type4">Real Estate</label><br>
-  <input type="checkbox" id="invest_type5" name="invest_type5" value="Mutual_Funds">
-  <label for="invest_type5">Mutual Funds</label><br>
-  <input type="checkbox" id="invest_type6" name="invest_type6" value="ETF">
-  <label for="invest_type6">ETFs</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+      if (!validateInput(current)) {
+        alert("Please answer the question before proceeding.");
+        return;
+      }
 
-  <h2>How frequently do you invest?</h2>
-  <select name="freq_invest" id="freq_invest">
-    <option value="weekly">Volvo</option>
-    <option value="monthly">Saab</option>
-    <option value="occasionnaly">Mercedes</option>
-    <option value="rarely">Rarely</option>
-  </select>
-  <button type="button" class="btn btn-primary">next</button>
+      if (nextQuestion) {
+        currentQuestion.classList.remove("active");
+        currentQuestion.classList.add("previous");
+        nextQuestion.classList.add("active");
 
-  <h2>What type of financial products interest you the most?</h2>
-  <input type="checkbox" id="interest_finance1" name="interest_finance1" value="Stocks">
-  <label for="interest_finance1">Stocks</label><br>
-  <input type="checkbox" id="interest_finance2" name="interest_finance2" value="Bonds">
-  <label for="interest_finance2">Bonds</label><br>
-  <input type="checkbox" id="interest_finance3" name="interest_finance3" value="Crypto">
-  <label for="interest_finance3">Crypto</label><br>
-  <input type="checkbox" id="interest_finance4" name="interest_finance4" value="Real_Estate">
-  <label for="interest_finance4">Real Estate</label><br>
-  <input type="checkbox" id="interest_finance5" name="interest_finance5" value="Mutual_Funds">
-  <label for="interest_finance5">Mutual Funds</label><br>
-  <input type="checkbox" id="interest_finance6" name="interest_finance5" value="ETF">
-  <label for="interest_finance6">ETFs</label><br>
-  <button type="button" class="btn btn-primary">next</button>
-</div>
+        document.getElementById(`prev${current + 1}`).style.display = "inline-block";
+      }
+    }
 
-<!--Section 3-->
-<div>
-  <h2>Do you track your spending?</h2>
-  <input type="radio" id="track_yes" name="track_spend" value="Yes">
-  <label for="yes">Yes</label> 
-  <input type="radio" id="track_no" name="track_spend" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+    function prevQuestion(current) {
+      const currentQuestion = document.getElementById(`q${current}`);
+      const prevQuestion = document.getElementById(`q${current - 1}`);
 
-  <h2>How do you currently budget?</h2>
-  <input type="checkbox" id="interest_finance1" name="interest_finance1" value="Stocks">
-  <label for="interest_finance1">Manually</label><br>
-  <input type="checkbox" id="interest_finance2" name="interest_finance2" value="Bonds">
-  <label for="interest_finance2">Apps</label><br>
-  <input type="checkbox" id="interest_finance3" name="interest_finance3" value="Crypto">
-  <label for="interest_finance3">No Budgeting</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+      if (prevQuestion) {
+        currentQuestion.classList.remove("active");
+        prevQuestion.classList.remove("previous");
+        prevQuestion.classList.add("active");
+        if (current === 2) {
+          document.getElementById(`prev${current}`).style.display = "none";
+        }
+      }
+    }
 
-  <h2>What are your biggest spendings?</h2>
-  <input type="text" class="form-control"  id="biggest_spend" name="Biggest_spend"><br><br>
+    function validateInput(current) {
+        const question = document.getElementById(`q${current}`);
+        let valid = false;
 
-  <h2>How do you manage your bills and subscriptions?</h2>
-  <input type="radio" id="manage_auto" name="manage_sub" value="Automatic">
-  <label for="automatic">Automatic</label> 
-  <input type="radio" id="manage_manual" name="manage_sub" value="Manual">
-  <label for="manual">Manual</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+        const select = question.querySelector("select");
+        if (select) {
+            valid = select.value !== "";
+        }
 
-  <h2>Have you ever faced financial stress due to overspending?</h2>
-  <input type="radio" id="stress_yes" name="finance_stress" value="Yes">
-  <label for="yes">Yes</label> 
-  <input type="radio" id="stress_no" name="finance_stress" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
-</div>
+        const radios = question.querySelectorAll("input[type='radio']");
+        if (radios.length > 0) {
+            valid = [...radios].some(radio => radio.checked);
+        }
 
-<!--Section 5-->
-<div>
-  <h2>Do you own a credit card?</h2>
-  <input type="radio" id="credit_yes" name="own_credit" value="Yes">
-  <label for="yes">Yes</label> 
-  <input type="radio" id="credit_no" name="own_credit" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+        const checkboxes = question.querySelectorAll("input[type='checkbox']");
+        if (checkboxes.length > 0) {
+            valid = [...checkboxes].some(checkbox => checkbox.checked);
+        }
 
-  <h2>What is your current credit score?</h2>
-  <input type="radio" id="cred_under_600" name="cred_score" value="und600">
-  <label for="Und600">Under 600$</label> 
-  <input type="radio" id="cred_between_600-700" name="cred_score" value="b600-700">
-  <label for="B600-700">Between 600$-700$</label><br>
-  <input type="radio" id="cred_between_700-800" name="cred_score" value="b700-800">
-  <label for="B700-800">Between 700$-800$</label> 
-  <input type="radio" id="cred_over_800" name="cred_score" value="over800">
-  <label for="Over800">Over 800$</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+        const textInput = question.querySelector("input[type='text']");
+        if (textInput) {
+          valid = textInput.value.trim() !== "";
+        }
 
-  <h2>Have you ever missed a credit payment</h2>
-  <input type="radio" id="miss_pay_yes" name="miss_pay" value="Yes">
-  <label for="yes">Yes</label> 
-  <input type="radio" id="miss_pay_no" name="miss_pay" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
+        return valid;
+      }
 
-  <h2>Are you looking for a better loan/credit card offer</h2>
-  <input type="radio" id="look_cred_yes" name="look_cred" value="Yes">
-  <label for="yes">Yes</label> 
-  <input type="radio" id="look_cred_no" name="look_cred" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
-</div>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector(".question").classList.add("active");
+    });
 
-<!--Section 6-->
-<div>
-  <h2>Do you have retirement savings plan</h2>
-  <input type="radio" id="look_cred_yes" name="look_cred" value="Yes">
-  <label for="yes">Yes</label> 
-  <input type="radio" id="look_cred_no" name="look_cred" value="No">
-  <label for="no">No</label><br>
-  <button type="button" class="btn btn-primary">next</button>
-
-  <h2>At what age do you plan to retire?</h2>
-  <input type="text" class="form-control"  id="retire_age" name="Retire_age"><br><br> <!--add limit of age-->
-  <button type="button" class="btn btn-primary">next</button>
-
-  <h2>What is your ideal retirement lifestyle</h2>
-  <input type="radio" id="basic_lifestyle" name="lifestyle" value="Basic">
-  <label for="basic">Basic</label> 
-  <input type="radio" id="comf_lifestyle" name="lifestyle" value="Comfortable">
-  <label for="comfortable">Comfortable</label><br>
-  <input type="radio" id="lux" name="lifestyle" value="Luxury">
-  <label for="luxury">Luxury</label><br>
-  <button type="button" class="btn btn-primary">next</button>
-</div>
+  (function() {
+    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+      window.chatbase = (...arguments) => {
+        if (!window.chatbase.q) {
+          window.chatbase.q = []
+        }
+        window.chatbase.q.push(arguments)
+      };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop) {
+          if (prop === "q") {
+            return target.q
+          }
+          return (...args) => target(prop, ...args)
+        }
+      })
+    }
+    const onLoad = function() {
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = "JWSJmh7slZMeILmpq8ba8";
+      script.domain = "www.chatbase.co";
+      document.body.appendChild(script)
+    };
+    if (document.readyState === "complete") {
+      onLoad()
+    } else {
+        window.addEventListener("load", onLoad)
+      }
+    })();
+  </script>
+ 
 </body>
 </html>
