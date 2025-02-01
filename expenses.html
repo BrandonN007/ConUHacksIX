@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<body>
+
+<h1>Expenses</h1>
+
+<canvas id="myExpenses" style="width:100%;max-width:600px"></canvas>
+<label>Food</label><input id="updateFoodAmount" onkeyup="updateFoodChart(this)" type="number">
+<br>
+<label>Transport</label><input id="updateTransportAmount" onkeyup="updateTransportChart(this)" type="number">
+<br>
+<label>Clothes</label><input id="updateClothesAmount" onkeyup="updateClothesChart(this)" type="number">
+<br>
+<label>Entertainment</label><input id="updateEntertainmentAmount" onkeyup="updateEntertainmentChart(this)" type="number">
+
+<script>
+
+    const data = { 
+        labels: ["Food", "Transport", "Clothes", "Entertainment"],
+        datasets: [{
+            label: "Expenses",
+            data: [200, 60, 200, 500],
+            barColors: ["red", "blue","green","orange"]
+        }]
+    }
+
+
+    const config = {
+        type: 'bar',
+        data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    }
+
+    const myChart = new Chart(
+        document.getElementById('myExpenses'),
+        config
+    );
+
+
+
+    function updateFoodChart(expensesValue){
+        myChart.config.data.datasets[0].data[0] = expensesValue.value;
+        myChart.update();
+    }
+
+    function updateTransportChart(expensesValue){
+        myChart.config.data.datasets[0].data[1] = expensesValue.value;
+        myChart.update();
+    }
+
+    function updateClothesChart(expensesValue){
+        myChart.config.data.datasets[0].data[2] = expensesValue.value;
+        myChart.update();
+    }
+
+    function updateEntertainmentChart(expensesValue){
+        myChart.config.data.datasets[0].data[3] = expensesValue.value;
+        myChart.update();
+    }
+</script>
+
+</body>
+
+</html>
