@@ -54,7 +54,11 @@ body {
   }
 
   .container {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
     width: 50%;
     background: white;
     padding: 20px;
@@ -64,10 +68,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    border: 3px solid rgb(255, 198, 92);
 }
 
 
-  .question {
+
+.question {
     position: absolute;
     width: 100%;
     text-align: center;
@@ -75,13 +82,13 @@ body {
     opacity: 0;
     transform: translateX(100%);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  }
+}
 
-  .question.active {
+.question.active {
     transform: translateX(0%);
     left: 0;
     opacity: 1;
-  }
+}
 
   .question.previous {
     transform: translateX(-100%);
