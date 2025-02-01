@@ -36,12 +36,12 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
-    overflow: hidden;
+    
   }
 
   .container {
@@ -55,7 +55,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid orange; /* Orange border */
 }
 
 
