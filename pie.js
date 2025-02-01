@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             Math.floor(Math.random() * 200)+60, 
                             Math.floor(Math.random() * 400), 
                             Math.floor(Math.random() * 300)+100],
-                    backgroundColor: ['yellow', 'blue', 'red', 'purple'],
+                    backgroundColor: ['#DAF7A6', '#FFC300', '#FF5733', '#900C3F'],
                     borderColor: 'black',
                     borderWidth: 1
                 }]
