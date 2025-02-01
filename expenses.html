@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -68,6 +68,83 @@
     }
 </script>
 
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ChartJS Stacked Bar Chart Example</title>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js">
+    </script>
+</head>
+
+<body>
+   
+    <h1>Expenses</h1>
+    
+    <div>
+        <canvas id="expensesChart"></canvas>
+    </div>
+
+
+    <script>
+
+        var myContext = document.getElementById("expensesChart").getContext('2d');
+        var myChart = new Chart(myContext, {
+            type: 'bar',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                datasets: [{
+                    label: 'Food',
+                    backgroundColor: "Yellow",
+                    data: [200, 150, 175, 100, 95, 90, 115, 120, 300, 120, 450, 500],
+                }, {
+                    label: 'Transport',
+                    backgroundColor: "blue",
+                    data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
+                }, {
+                    label: 'Clothes',
+                    backgroundColor: "red",
+                    data: [100, 50, 75, 25, 20, 0, 50, 150, 80, 35, 100, 300],
+                }, {
+                    label: 'Entertainment',
+                    backgroundColor: "Purple",
+                    data: [100, 50, 20, 35, 75, 250, 50, 300, 120, 50, 200, 500],
+                }],
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Your expenses throughout the year'
+                    },
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
