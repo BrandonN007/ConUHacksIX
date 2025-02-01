@@ -12,19 +12,19 @@ var myChart = new Chart(myContext, {
         labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         datasets: [{
             label: 'Food',
-            backgroundColor: "#DAF7A6",
+            backgroundColor: "#fff8e0",
             data: foodExpenses,
         }, {
             label: 'Transport',
-            backgroundColor: "#FFC300",
+            backgroundColor: "#D6EFFF",
             data: transportExpenses,
         }, {
             label: 'Clothes',
-            backgroundColor: "#FF5733",
+            backgroundColor: "#FED18C",
             data: clothesExpenses,
         }, {
             label: 'Entertainment',
-            backgroundColor: "#900C3F",
+            backgroundColor: "#FE654F",
             data: entertainmentExpenses,
         }],
     },
