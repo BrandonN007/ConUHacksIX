@@ -1,5 +1,5 @@
 #background-image{
-    background-image: url("sunlife.png");
+    background-image: url("sunliferedone.png");
 }
 
 #dashboardDiv{
@@ -12,6 +12,10 @@
 #dashboardDiv h1{
     text-align: center;
     padding-top: 5vh;
+}
+
+#navbar{
+    background-color: #e3bc52;
 }
 
 .row{
@@ -68,8 +72,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    border: 3px solid rgb(255, 198, 92);
 }
 
 
