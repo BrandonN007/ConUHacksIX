@@ -2,14 +2,39 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+    <script src="expenses.js"></script>
+    <script src="pie.js"></script>
+</head>
+<body id="background-image">
+
+<div id="dashboardDiv">
   <h1>Dashboard</h1>
 
-  
-  
+
+
+  <div class="container">
+
+    <div class="row justify-content-evenly">
+      <div class="col-4" id="pieDiv">
+        <canvas id="pieChart"></canvas>
+      </div>
+
+      
+
+      <div class="col-4" id="expensesDiv">
+        <canvas id="expensesChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
 </div>
 
 </body>
