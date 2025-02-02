@@ -44,7 +44,7 @@ async function getFinancialAdvice() {
                                 Biggest Spending: ${userResponses.biggestSpending}. 
                                 Retirement Age: ${userResponses.retirementAge}.
 
-                                Provide short, actionable financial advice based on this data.`
+                                You are an advisor assistant made to provide advices, actionable financial advice based on these datas as well as for goal to reach the goals of the users mentioned. You will make sure you divide the answers so the readabilidy is easy`
                             }
                         ]
                     }
@@ -77,7 +77,7 @@ function trackQuizProgress() {
                 .filter(input => (input.type === "radio" || input.type === "checkbox") ? input.checked : input.value.trim() !== "").length;
 
             if (completedQuestions >= totalQuestions) {
-                console.log("✅ Quiz completed! Starting AI analysis...");
+                console.log("Quiz completed! Starting AI analysis...");
                 getFinancialAdvice();
             }
         });
@@ -86,7 +86,5 @@ function trackQuizProgress() {
 function finishQuiz() {
     document.getElementById("modal").style.display = "none"; // Hide modal
 }
-
-
 
 document.addEventListener("DOMContentLoaded", trackQuizProgress);
