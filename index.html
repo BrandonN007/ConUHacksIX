@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="style.css"> -->
 <style>
 body, html {
     height: 100%;
@@ -11,7 +10,7 @@ body, html {
     justify-content: center;
     align-items: center;
     background-image: url("sunlife.png");
-    background-size: cover; /* or cover */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -80,7 +79,6 @@ span.psw {
   padding-top: 16px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
      display: block;
@@ -95,8 +93,6 @@ span.psw {
 
 
 <body>
-
-
 
 <form action="dashboard.html" method="post" class="loginForm" id="loginForm">
 
@@ -113,7 +109,7 @@ span.psw {
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" value="doe" required>
         
-    <button type="submit">Get Started</button>
+    <button type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>

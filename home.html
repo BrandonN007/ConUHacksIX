@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Sunny - Your AI Financial Advisor</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+        .navbar {
+            width: 100%;
+            background-color: #F9E056;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f8f9fa, #fff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .content-container {
+            margin-top: 0px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.8rem;
+            color: #555;
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Sun Life</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#">Ask Sunny</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="content-container">
+    <h1>Say Hello to Sunny ☀️</h1>
+    <p>Sunny is your personal AI finance advisor who will help you<br>with any financial questions and provide expert tips for your success.</p>
+    <button type="button" class="btn btn-outline-warning" onclick="redirectToHome()">Get Started</button>
+</div>
+
+<script>
+    function redirectToHome() {
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
