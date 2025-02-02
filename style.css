@@ -214,3 +214,14 @@ body {
 #closeModal:hover {
     background-color: darkred;
 }
+
+.ai-advice {
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    background-color: #FFF8E0;
+    font-weight: bold;
+    max-width: 600px;
+}
