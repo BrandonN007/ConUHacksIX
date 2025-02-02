@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Your expenses throughout the year'
+                        text: 'Your expenses from last month'
                     },
                 }
             };
