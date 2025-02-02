@@ -34,25 +34,19 @@
 
 
   <div class="container">
-
-    <div class="row justify-content-evenly">
-      <div class="col-4" id="pieDiv">
+    <div class="row">
+      <div class="col-md-6" id="pieDiv">
         <canvas id="pieChart"></canvas>
       </div>
-
-      
-
-      <div class="col-4" id="expensesDiv">
+      <div class="col-md-6" id="expensesDiv">
         <canvas id="expensesChart"></canvas>
       </div>
     </div>
-
-  </div>
-
-
-  <div class="containerBtn">
-    <div class="centerBtn">
-      <button type="button" class="block" id="openModal">Plan Ahead</button>
+  
+    <div class="row text-center">
+      <div class="col-12">
+        <button type="button" class="btn btn-warning" id="openModal">Plan Ahead</button>
+      </div>
     </div>
   </div>
 
@@ -60,10 +54,8 @@
 
 
   <div id="modal" class="modal">
-    <!-- Modal content -->
     <div class="modal-content modal-inner">
-      <button id="closeModal">Close</button>
-
+      <button id="closeModal">X</button>
       <div class="container1">
         <img src="Sun-Life-Financial-Logo.png" alt="Logo" class="logo">
         <div class="question" id="q1">
@@ -79,8 +71,12 @@
             <option value="improve_cred_sc">Improve Credit Score</option>
             <option value="healthcare_emergency_saving">Healthcare & Emergency Savings</option>
           </select>
-          <br><br>
-          <button onclick="nextQuestion(1)" class="circle">⇨</button>
+          <br>
+          <div class="button-container">
+            <button onclick="prevQuestion(1)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(1)" class="circle">⇨</button>
+          </div>
+        
         </div>
     
         <div class="question" id="q2">
@@ -91,8 +87,11 @@
             <label for="risk_medium">Medium</label>
             <input type="radio" id="risk_high" name="risk" value="High">
             <label for="risk_high">High</label>
-            <br><br>
-            <button onclick="prevQuestion(2)" class="circle" id="prev2" style="display: none;">⇦</button><button onclick="nextQuestion(2)" class="circle">⇨</button>
+            <br>
+            <div class="button-container">
+              <button onclick="prevQuestion(2)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+              <button onclick="nextQuestion(2)" class="circle">⇨</button>
+            </div>
         </div>
     
         <div class="question" id="q3">
@@ -103,25 +102,32 @@
           <label for="mid_term">Mid-term (1-5 Years)</label>
           <input type="radio" id="high_term" name="when_plan" value="High">
           <label for="high_term">Long-Term (5+ years)</label>
-          <br><br>
-          <button onclick="prevQuestion(3)" class="circle" id="prev3" style="display: none;">⇦</button><button onclick="nextQuestion(3)" class="circle">⇨</button>
+          <br>
+          <div class="button-container">
+            <button onclick="prevQuestion(3)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(3)" class="circle">⇨</button>
+          </div>
         </div>
     
         <div class="question" id="q4">
           <h2>How much do you have in your emergency fund?</h2>
-          <input type="text" id="emergency_fund" name="emergency_fund"><br><br>
-          <br><br>
-          <button onclick="prevQuestion(4)" class="circle" id="prev4" style="display: none;">⇦</button><button onclick="nextQuestion(4)" class="circle">⇨</button>
-        </div>
+          <input type="text" id="emergency_fund" name="emergency_fund" data-numeric><br>
+          <div class="button-container">
+            <button onclick="prevQuestion(4)" class="circle prev-btn" id="prev4" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(4)" class="circle">⇨</button>
+          </div>
+        </div>        
     
         <div class="question" id="q5">
           <h2>Do you currently invest?</h2>
           <input type="radio" id="invest_yes" name="invest" value="Yes">
           <label for="invest_yes">Yes</label>
           <input type="radio" id="invest_no" name="invest" value="No">
-          <label for="invest_no">No</label>
-          <br><br>
-          <button onclick="prevQuestion(5)" class="circle" id="prev5" style="display: none;">⇦</button><button onclick="nextQuestion(5)" class="circle">⇨</button>
+          <label for="invest_no">No</label> <br>
+          <div class="button-container">
+            <button onclick="prevQuestion(5)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(5)" class="circle">⇨</button>
+          </div>
         </div>
     
         <div class="question" id="q6">
@@ -132,9 +138,11 @@
           <input type="checkbox" name="invest_type" value="Real_Estate"> Real Estate<br>
           <input type="checkbox" name="invest_type" value="Mutual_Funds"> Mutual Funds<br>
           <input type="checkbox" name="invest_type" value="ETF"> ETFs<br>
-          <input type="checkbox" name="invest_type" value="Nothing"> Nothing<br>
-          <br><br>
-          <button onclick="prevQuestion(6)" class="circle" id="prev6" style="display: none;">⇦</button><button onclick="nextQuestion(6)" class="circle">⇨</button>
+          <input type="checkbox" name="invest_type" value="Nothing"> Nothing
+          <div class="button-container">
+            <button onclick="prevQuestion(6)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(6)" class="circle">⇨</button>
+          </div>
         </div>
               
         <div class="question" id="q7">
@@ -146,8 +154,10 @@
             <option value="rarely">Rarely</option>
             <option value="rarely">Never</option>
           </select>
-          <br><br>
-          <button onclick="prevQuestion(7)" class="circle" id="prev7" style="display: none;">⇦</button><button onclick="nextQuestion(7)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(7)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(7)" class="circle">⇨</button>
+          </div>
         </div>
     
         <div class="question" id="q8">
@@ -165,9 +175,11 @@
           <input type="checkbox" id="interest_finance6" name="interest_finance6" value="ETF">
           <label for="interest_finance6">ETFs</label><br>
           <input type="checkbox" id="interest_finance7" name="interest_finance7" value="Nothing">
-          <label for="interest_finance7">Nothing</label><br>
-          <br><br>
-          <button onclick="prevQuestion(8)" class="circle" id="prev8" style="display: none;">⇦</button><button onclick="nextQuestion(8)" class="circle">⇨</button>
+          <label for="interest_finance7">Nothing</label>
+          <div class="button-container">
+            <button onclick="prevQuestion(8)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(8)" class="circle">⇨</button>
+          </div>
         </div>
               
         <div class="question" id="q9">
@@ -175,9 +187,11 @@
           <input type="radio" id="track_yes" name="track_spend" value="Yes">
           <label for="yes">Yes</label> 
           <input type="radio" id="track_no" name="track_spend" value="No">
-          <label for="no">No</label><br>
-          <br><br>
-          <button onclick="prevQuestion(9)" class="circle" id="prev9" style="display: none;">⇦</button><button onclick="nextQuestion(9)" class="circle">⇨</button>
+          <label for="no">No</label>
+          <div class="button-container">
+            <button onclick="prevQuestion(9)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(9)" class="circle">⇨</button>
+          </div>
         </div>
               
         <div class="question" id="q10">
@@ -188,15 +202,21 @@
           <label for="interest_finance2">Apps</label><br>
           <input type="checkbox" id="interest_finance3" name="interest_finance3" value="Crypto">
           <label for="interest_finance3">No Budgeting</label><br>
-          <br><br>
-          <button onclick="prevQuestion(10)" class="circle" id="prev10" style="display: none;">⇦</button><button onclick="nextQuestion(10)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(10)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(10)" class="circle">⇨</button>
+          </div>
         </div>
             
         <div class="question" id="q11">
           <h2>What are your biggest spendings?</h2>
-          <input type="text" id="biggest_spend" name="Biggest_spend"><br><br>
-          <button onclick="prevQuestion(11)" class="circle" id="prev11" style="display: none;">⇦</button><button onclick="nextQuestion(11)" class="circle">⇨</button>
+          <input type="text" id="biggest_spend" name="biggest_spend" data-numeric><br>
+          <div class="button-container">
+            <button onclick="prevQuestion(11)" class="circle prev-btn" id="prev11" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(11)" class="circle">⇨</button>
+          </div>
         </div>
+        
               
         <div class="question" id="q12">
           <h2>How do you manage your bills and subscriptions?</h2>
@@ -204,8 +224,10 @@
           <label for="automatic">Automatic</label> 
           <input type="radio" id="manage_manual" name="manage_sub" value="Manual">
           <label for="manual">Manual</label><br>
-          <br><br>
-          <button onclick="prevQuestion(12)" class="circle" id="prev12" style="display: none;">⇦</button><button onclick="nextQuestion(12)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(12)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(12)" class="circle">⇨</button>
+          </div>
         </div>
               
         <div class="question" id="q13">
@@ -214,11 +236,13 @@
           <label for="yes">Yes</label> 
           <input type="radio" id="stress_no" name="finance_stress" value="No">
           <label for="no">No</label><br>
-          <br><br>
-          <button onclick="prevQuestion(13)" class="circle" id="prev13" style="display: none;">⇦</button><button onclick="nextQuestion(13)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(13)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(13)" class="circle">⇨</button>
+          </div>
         </div>
               
-        <div class="question" id="q15">
+        <div class="question" id="q14">
           <h2>What is your current credit score?</h2>
           <input type="radio" id="cred_under_600" name="cred_score" value="und600">
           <label for="Und600">Under 600</label> 
@@ -228,48 +252,58 @@
           <label for="B700-800">Between 700-800</label> 
           <input type="radio" id="cred_over_800" name="cred_score" value="over800">
           <label for="Over800">Over 800</label><br>
-          <br><br>
-          <button onclick="prevQuestion(14)" class="circle" id="prev14" style="display: none;">⇦</button><button onclick="nextQuestion(15)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(14)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(14)" class="circle">⇨</button>
+          </div>
         </div>
             
-        <div class="question" id="q16">
+        <div class="question" id="q15">
           <h2>Have you ever missed a credit payment</h2>
           <input type="radio" id="miss_pay_yes" name="miss_pay" value="Yes">
           <label for="yes">Yes</label> 
           <input type="radio" id="miss_pay_no" name="miss_pay" value="No">
           <label for="no">No</label><br>
-          <br><br>
-          <button onclick="prevQuestion(15)" class="circle" id="prev15" style="display: none;">⇦</button><button onclick="nextQuestion(16)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(15)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(15)" class="circle">⇨</button>
+          </div>
         </div>
               
-        <div class="question" id="q17">
+        <div class="question" id="q16">
           <h2>Are you looking for a better loan/credit card offer</h2>
           <input type="radio" id="look_cred_yes" name="look_cred" value="Yes">
           <label for="yes">Yes</label> 
           <input type="radio" id="look_cred_no" name="look_cred" value="No">
           <label for="no">No</label><br>
-          <br><br>
-          <button onclick="prevQuestion(17)" class="circle" id="prev17" style="display: none;">⇦</button><button onclick="nextQuestion(17)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(16)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(16)" class="circle">⇨</button>
+          </div>
         </div>
             
-        <div class="question" id="q18">
+        <div class="question" id="q17">
           <h2>Do you have retirement savings plan</h2>
           <input type="radio" id="look_cred_yes" name="look_cred" value="Yes">
           <label for="yes">Yes</label> 
           <input type="radio" id="look_cred_no" name="look_cred" value="No">
           <label for="no">No</label><br>
-          <br><br>
-          <button onclick="prevQuestion(18)" class="circle" id="prev18" style="display: none;">⇦</button><button onclick="nextQuestion(18)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(17)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(17)" class="circle">⇨</button>
+          </div>
+        </div>
+              
+        <div class="question" id="q18">
+          <h2>At what age do you plan to retire?</h2>
+          <input type="text" id="retire_age" name="Retire_age"><br><br> <!--add limit of age-->
+          <div class="button-container">
+            <button onclick="prevQuestion(18)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(18)" class="circle">⇨</button>
+          </div>
         </div>
               
         <div class="question" id="q19">
-          <h2>At what age do you plan to retire?</h2>
-          <input type="text" id="retire_age" name="Retire_age"><br><br> <!--add limit of age-->
-          <br><br>
-          <button onclick="prevQuestion(19)" class="circle" id="prev19" style="display: none;">⇦</button><button onclick="nextQuestion(19)" class="circle">⇨</button>
-        </div>
-              
-        <div class="question" id="q20">
           <h2>What is your ideal retirement lifestyle</h2>
           <input type="radio" id="basic_lifestyle" name="lifestyle" value="Basic">
           <label for="basic">Basic</label> 
@@ -277,11 +311,12 @@
           <label for="comfortable">Comfortable</label><br>
           <input type="radio" id="lux" name="lifestyle" value="Luxury">
           <label for="luxury">Luxury</label><br>
-          <br><br>
-          <button onclick="prevQuestion(20)" class="circle" id="prev20" style="display: none;">←</button><button onclick="nextQuestion(20)" class="circle">⇨</button>
+          <div class="button-container">
+            <button onclick="prevQuestion(19)" class="circle prev-btn" id="prev1" style="display: none;">⇦</button>
+            <button onclick="nextQuestion(19)" class="circle">⇨</button>
+          </div> 
         </div>
       </div>
-
     </div>
   </div>
 
