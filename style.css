@@ -25,7 +25,7 @@
     gap: 20px; 
 }
 
-#pieDiv{
+#balanceDiv, #pieDiv{
     border: 1px solid black;
     box-shadow: 2px 2px 2px grey;
     border-radius: 10px;
@@ -36,6 +36,11 @@
     box-shadow: 2px 2px 2px grey;
     border-radius: 10px;
     width: 500px;
+}
+
+#pieChart, #expensesChart {
+    width: 100% !important;
+    height: auto !important;
 }
 
 @font-face {
