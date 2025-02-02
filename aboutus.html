@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Sunny - Your AI Financial Advisor</title>
+    <title>About Us | Sunny - Your AI Financial Advisor</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -26,27 +26,25 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             text-align: center;
+            padding-top: 70px;
         }
 
         .content-container {
-            margin-top: 0px;
+            max-width: 900px;
             padding: 20px;
         }
 
         h1 {
-            font-size: 8rem;
+            font-size: 4rem;
             font-weight: bold;
             color: #333;
         }
 
         p {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #555;
-            line-height: 1.5;
-            max-width: 900px;
-            margin: 0 auto;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -59,26 +57,22 @@
                 <a class="navbar-brand" href="#">Sunny</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="#">Ask Sunny</a></li>
-                <li><a href="#">About Us</a></li>
+                <li class="active"><a href="about.html">About Us</a></li>
             </ul>
         </div>
     </nav>
 </header>
 
 <div class="content-container">
-    <h1>Say Hello to Sunny ☀️</h1>
-    <p>Sunny is your personal AI finance advisor who will help you<br>with any financial questions and provide expert tips for your success.</p>
-    <button type="button" class="btn btn-outline-warning" onclick="redirectToHome()">Get Started</button>
+    <h1>About Us</h1>
+    <p>Welcome to Sunny, your AI-powered financial advisor.</p>
+    <p>We analyze your spending habits with the power of AI so that we can give you personal insights on budgeting advices,</p>
+    <p>spending habits as well as answering any questions you have on complicated finance terms that you might not know.</p>
+    <p>Our goal is to help our users reach their financial dreams.</p>
 </div>
-
-<script>
-    function redirectToHome() {
-        window.location.href = "index.html";
-    }
-</script>
 
 </body>
 </html>
