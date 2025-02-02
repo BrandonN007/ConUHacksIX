@@ -4,7 +4,7 @@
 
 #dashboardDiv{
     width: 100%;
-    height: 130%;
+    height: 200%;
     margin-top: 10%;
     background-color: white;
 }
@@ -60,6 +60,15 @@ body {
     height: 100vh;
     background-color: #f4f4f4;
     
+}
+
+
+#insightsAndTips{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 10%;
+    border: 1px solid black;
 }
 
 .button-container {
@@ -121,6 +130,11 @@ body {
 .question.active {
     display: block;
 
+}
+
+#currentMonthlyExpenseChart{
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .circle {
