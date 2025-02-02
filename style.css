@@ -19,7 +19,6 @@
 }
 
 .row{
-    display: flex;
     justify-content: center; 
     align-items: center; 
     gap: 20px; 
@@ -35,7 +34,7 @@
     border: 1px solid black;
     box-shadow: 2px 2px 2px grey;
     border-radius: 10px;
-    width: 500px;
+    width: 620px;
 }
 
 #pieChart, #expensesChart {
@@ -76,7 +75,7 @@ body {
 
 
 .container {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -85,9 +84,10 @@ body {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    overflow: hidden;
-    height: 300px;
-    display: flex;
+    overflow: hidden; */
+    /* height: 300px; */
+    
+    
     align-items: center;
     justify-content: center;
 }
