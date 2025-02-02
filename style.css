@@ -4,7 +4,7 @@
 
 #dashboardDiv{
     width: 100%;
-    height: 100vh;
+    height: 130%;
     margin-top: 10%;
     background-color: white;
 }
@@ -22,6 +22,7 @@
     justify-content: center; 
     align-items: center; 
     gap: 20px; 
+    padding-top: 20px;
 }
 
 #balanceDiv, #pieDiv{
@@ -105,6 +106,11 @@ body {
     justify-content: center;
     
     border: 3px solid #e3bc52;
+}
+
+.questionnaireBtn{
+    padding: 70px 0;
+    text-align: center;
 }
 
 .question {
