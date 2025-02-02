@@ -1,5 +1,3 @@
-const API_KEY = "AIzaSyC_KqAccj5n3T7zTNQJTS7OqoCBt_CPEvA";
-
 function getUserResponses() {
     return {
         financialGoal: document.getElementById("financial_goal").value,
