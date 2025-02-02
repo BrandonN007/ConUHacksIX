@@ -5,23 +5,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <header>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img>Sun Life</a>
+  <header>
+    <nav class="navbar navbar-default" id="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img>Sun Life</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Ask Sunny</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Ask Sunny</a></li>
-        <li><a href="#">About Us</a></li>
-      </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </header>
 
 <body>
-  <div class="container">
+  <div class="container1">
     <img src="Sun-Life-Financial-Logo.png" alt="Logo" class="logo">
     <div class="question" id="q1">
       <h2>What are your main financial goals?</h2>
@@ -37,7 +39,7 @@
         <option value="healthcare_emergency_saving">Healthcare & Emergency Savings</option>
       </select>
       <br><br>
-      <button onclick="nextQuestion(1)">⇨</button>
+      <button onclick="nextQuestion(1)" class="circle">⇨</button>
     </div>
 
     <div class="question" id="q2">
@@ -49,7 +51,7 @@
         <input type="radio" id="risk_high" name="risk" value="High">
         <label for="risk_high">High</label>
         <br><br>
-        <button onclick="prevQuestion(2)" id="prev2" style="display: none;">⇦</button><button onclick="nextQuestion(2)">⇨</button>
+        <button onclick="prevQuestion(2)" class="circle" id="prev2" style="display: none;">⇦</button><button onclick="nextQuestion(2)" class="circle">⇨</button>
     </div>
 
     <div class="question" id="q3">
@@ -61,14 +63,14 @@
       <input type="radio" id="high_term" name="when_plan" value="High">
       <label for="high_term">Long-Term (5+ years)</label>
       <br><br>
-      <button onclick="prevQuestion(3)" id="prev3" style="display: none;">⇦</button><button onclick="nextQuestion(3)">⇨</button>
+      <button onclick="prevQuestion(3)" class="circle" id="prev3" style="display: none;">⇦</button><button onclick="nextQuestion(3)" class="circle">⇨</button>
     </div>
 
     <div class="question" id="q4">
       <h2>How much do you have in your emergency fund?</h2>
       <input type="text" id="emergency_fund" name="emergency_fund"><br><br>
       <br><br>
-      <button onclick="prevQuestion(4)" id="prev4" style="display: none;">⇦</button><button onclick="nextQuestion(4)">⇨</button>
+      <button onclick="prevQuestion(4)" class="circle" id="prev4" style="display: none;">⇦</button><button onclick="nextQuestion(4)" class="circle">⇨</button>
     </div>
 
     <div class="question" id="q5">
@@ -78,7 +80,7 @@
       <input type="radio" id="invest_no" name="invest" value="No">
       <label for="invest_no">No</label>
       <br><br>
-      <button onclick="prevQuestion(5)" id="prev5" style="display: none;">⇦</button><button onclick="nextQuestion(5)">⇨</button>
+      <button onclick="prevQuestion(5)" class="circle" id="prev5" style="display: none;">⇦</button><button onclick="nextQuestion(5)" class="circle">⇨</button>
     </div>
 
     <div class="question" id="q6">
@@ -91,7 +93,7 @@
       <input type="checkbox" name="invest_type" value="ETF"> ETFs<br>
       <input type="checkbox" name="invest_type" value="Nothing"> Nothing<br>
       <br><br>
-      <button onclick="prevQuestion(6)" id="prev6" style="display: none;">⇦</button><button onclick="nextQuestion(6)">⇨</button>
+      <button onclick="prevQuestion(6)" class="circle" id="prev6" style="display: none;">⇦</button><button onclick="nextQuestion(6)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q7">
@@ -104,7 +106,7 @@
         <option value="rarely">Never</option>
       </select>
       <br><br>
-      <button onclick="prevQuestion(7)" id="prev7" style="display: none;">⇦</button><button onclick="nextQuestion(7)">⇨</button>
+      <button onclick="prevQuestion(7)" class="circle" id="prev7" style="display: none;">⇦</button><button onclick="nextQuestion(7)" class="circle">⇨</button>
     </div>
 
     <div class="question" id="q8">
@@ -124,7 +126,7 @@
       <input type="checkbox" id="interest_finance7" name="interest_finance7" value="Nothing">
       <label for="interest_finance7">Nothing</label><br>
       <br><br>
-      <button onclick="prevQuestion(8)" id="prev8" style="display: none;">⇦</button><button onclick="nextQuestion(8)">⇨</button>
+      <button onclick="prevQuestion(8)" class="circle" id="prev8" style="display: none;">⇦</button><button onclick="nextQuestion(8)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q9">
@@ -134,7 +136,7 @@
       <input type="radio" id="track_no" name="track_spend" value="No">
       <label for="no">No</label><br>
       <br><br>
-      <button onclick="prevQuestion(9)" id="prev9" style="display: none;">⇦</button><button onclick="nextQuestion(9)">⇨</button>
+      <button onclick="prevQuestion(9)" class="circle" id="prev9" style="display: none;">⇦</button><button onclick="nextQuestion(9)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q10">
@@ -146,13 +148,13 @@
       <input type="checkbox" id="interest_finance3" name="interest_finance3" value="Crypto">
       <label for="interest_finance3">No Budgeting</label><br>
       <br><br>
-      <button onclick="prevQuestion(10)" id="prev10" style="display: none;">⇦</button><button onclick="nextQuestion(10)">⇨</button>
+      <button onclick="prevQuestion(10)" class="circle" id="prev10" style="display: none;">⇦</button><button onclick="nextQuestion(10)" class="circle">⇨</button>
     </div>
         
     <div class="question" id="q11">
       <h2>What are your biggest spendings?</h2>
       <input type="text" id="biggest_spend" name="Biggest_spend"><br><br>
-      <button onclick="prevQuestion(11)" id="prev11" style="display: none;">⇦</button><button onclick="nextQuestion(11)">⇨</button>
+      <button onclick="prevQuestion(11)" class="circle" id="prev11" style="display: none;">⇦</button><button onclick="nextQuestion(11)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q12">
@@ -162,7 +164,7 @@
       <input type="radio" id="manage_manual" name="manage_sub" value="Manual">
       <label for="manual">Manual</label><br>
       <br><br>
-      <button onclick="prevQuestion(12)" id="prev12" style="display: none;">⇦</button><button onclick="nextQuestion(12)">⇨</button>
+      <button onclick="prevQuestion(12)" class="circle" id="prev12" style="display: none;">⇦</button><button onclick="nextQuestion(12)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q13">
@@ -172,7 +174,7 @@
       <input type="radio" id="stress_no" name="finance_stress" value="No">
       <label for="no">No</label><br>
       <br><br>
-      <button onclick="prevQuestion(13)" id="prev13" style="display: none;">⇦</button><button onclick="nextQuestion(13)">⇨</button>
+      <button onclick="prevQuestion(13)" class="circle" id="prev13" style="display: none;">⇦</button><button onclick="nextQuestion(13)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q15">
@@ -186,7 +188,7 @@
       <input type="radio" id="cred_over_800" name="cred_score" value="over800">
       <label for="Over800">Over 800</label><br>
       <br><br>
-      <button onclick="prevQuestion(14)" id="prev14" style="display: none;">⇦</button><button onclick="nextQuestion(15)">⇨</button>
+      <button onclick="prevQuestion(14)" class="circle" id="prev14" style="display: none;">⇦</button><button onclick="nextQuestion(15)" class="circle">⇨</button>
     </div>
         
     <div class="question" id="q16">
@@ -196,7 +198,7 @@
       <input type="radio" id="miss_pay_no" name="miss_pay" value="No">
       <label for="no">No</label><br>
       <br><br>
-      <button onclick="prevQuestion(15)" id="prev15" style="display: none;">⇦</button><button onclick="nextQuestion(16)">⇨</button>
+      <button onclick="prevQuestion(15)" class="circle" id="prev15" style="display: none;">⇦</button><button onclick="nextQuestion(16)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q17">
@@ -206,7 +208,7 @@
       <input type="radio" id="look_cred_no" name="look_cred" value="No">
       <label for="no">No</label><br>
       <br><br>
-      <button onclick="prevQuestion(17)" id="prev17" style="display: none;">⇦</button><button onclick="nextQuestion(17)">⇨</button>
+      <button onclick="prevQuestion(17)" class="circle" id="prev17" style="display: none;">⇦</button><button onclick="nextQuestion(17)" class="circle">⇨</button>
     </div>
         
     <div class="question" id="q18">
@@ -216,14 +218,14 @@
       <input type="radio" id="look_cred_no" name="look_cred" value="No">
       <label for="no">No</label><br>
       <br><br>
-      <button onclick="prevQuestion(18)" id="prev18" style="display: none;">⇦</button><button onclick="nextQuestion(18)">⇨</button>
+      <button onclick="prevQuestion(18)" class="circle" id="prev18" style="display: none;">⇦</button><button onclick="nextQuestion(18)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q19">
       <h2>At what age do you plan to retire?</h2>
       <input type="text" id="retire_age" name="Retire_age"><br><br> <!--add limit of age-->
       <br><br>
-      <button onclick="prevQuestion(19)" id="prev19" style="display: none;">⇦</button><button onclick="nextQuestion(19)">⇨</button>
+      <button onclick="prevQuestion(19)" class="circle" id="prev19" style="display: none;">⇦</button><button onclick="nextQuestion(19)" class="circle">⇨</button>
     </div>
           
     <div class="question" id="q20">
@@ -235,7 +237,7 @@
       <input type="radio" id="lux" name="lifestyle" value="Luxury">
       <label for="luxury">Luxury</label><br>
       <br><br>
-      <button onclick="prevQuestion(20)" id="prev20" style="display: none;">←</button><button onclick="nextQuestion(20)">⇨</button>
+      <button onclick="prevQuestion(20)" class="circle" id="prev20" style="display: none;">←</button><button onclick="nextQuestion(20)" class="circle">⇨</button>
     </div>
   </div>
 
